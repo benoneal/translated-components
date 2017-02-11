@@ -5,9 +5,11 @@ A higher-order-component to pass translated strings as props to components. Comp
 
 ## How to use
 
-Four simple steps: 
+Five simple steps: 
 
-String template parsing is handled via the [intl-messageformat library](https://github.com/yahoo/intl-messageformat), which depends on the browser's global I18n API. It's likely you'll need to polyfill this, and the simplest way is to include this script in the head of your rendered HTML: 
+First, install via `npm i -S translated-components` or `yarn add translated-components`.
+
+Next, string template parsing is handled via the [intl-messageformat library](https://github.com/yahoo/intl-messageformat), which depends on the browser's global I18n API. It's likely you'll need to polyfill this, and the simplest way is to include this script in the head of your rendered HTML: 
 
 ```
 // index.html <head>
