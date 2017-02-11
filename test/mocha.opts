@@ -1,0 +1,5 @@
+--recursive
+--require test/dom.js
+--require babel-polyfill
+--compilers js:babel-register
+--ui bdd
