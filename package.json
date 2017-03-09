@@ -1,7 +1,8 @@
 {
   "name": "translated-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pass i18n translated strings as props to components",
+  "repository": "https://github.com/benoneal/translated-components",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "mkdir -p dist && babel src --out-dir dist",
@@ -18,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "assert": "^1.4.1",
-    "babel-cli": "^6.10.1",
+    "babel-cli": "^6.23.0",
     "babel-eslint": "^6.1.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-react-jsx": "^6.22.0",

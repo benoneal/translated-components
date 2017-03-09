@@ -166,7 +166,8 @@ const format = {
   number: {
     USD: {
       style: 'currency',
-      currency: 'USD'
+      currency: 'USD',
+      minimumFractionDigits: 0
     }
   }
 }

@@ -50,7 +50,8 @@ const moneyFormat = (language) => ({
   number: {
     money: {
       style: 'currency',
-      currency: getRegionCurrency(language.slice(-2)).code
+      currency: getRegionCurrency(language.slice(-2)).code,
+      minimumFractionDigits: 0
     }
   }
 })
@@ -58,7 +59,7 @@ const moneyFormat = (language) => ({
 const preHeat = (translations, format) => (
   reduce(translations, (acc, o, language) => {
     acc[language] = reduce(o, (acc, v, k) => {
-      acc[k] = new IntlFormat(v, kebabCase(language), {...format, ...moneyFormat(language)})
+      acc[k] = new IntlFormat(v, kebabCase(language), {...moneyFormat(language), ...format})
       return acc
     }, {})
     return acc
