@@ -1,6 +1,6 @@
 {
   "name": "translated-components",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Pass i18n translated strings as props to components",
   "repository": "https://github.com/benoneal/translated-components",
   "main": "dist/index.js",

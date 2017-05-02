@@ -5,11 +5,18 @@ import kebabCase from 'lodash/kebabCase'
 import isString from 'lodash/isString'
 import isNumber from 'lodash/isNumber'
 import IntlFormat from 'intl-messageformat'
-import {countries, currencies} from 'country-data'
 
 const CHANNEL = 'language'
 const DEFAULT_LANG = 'en_US'
 let customDefaultLanguage = DEFAULT_LANG
+const regionCurrency = {
+  AU: 'AUD',
+  NZ: 'NZD',
+  US: 'USD',
+  CA: 'CAD',
+  GB: 'GPB',
+  IE: 'EUR'
+}
 
 export const TranslationProvider = ({
   language,
@@ -50,7 +57,7 @@ const moneyFormat = (language) => ({
   number: {
     money: {
       style: 'currency',
-      currency: getRegionCurrency(language.slice(-2)).code,
+      currency: regionCurrency[language.slice(-2)],
       minimumFractionDigits: 0
     }
   }
@@ -92,8 +99,4 @@ const translateWithDefaults = ({
     ...translations[customDefaultLanguage],
     ...translations[language]
   }, reducer, {})
-)
-
-const getRegionCurrency = (region) => (
-  currencies[countries[region].currencies[0]]
 )
